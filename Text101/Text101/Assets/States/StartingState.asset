@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d1e27af88a4ea4b9311d7b412e6f60, type: 3}
+  m_Name: StartingState
+  m_EditorClassIdentifier: 
+  _storyText: 'HI.
+
+
+    What?
+
+
+    1. A
+
+    2. B'
+  _nextStates:
+  - {fileID: 11400000, guid: 7f1785b4d56be1c4392149432f7f6ff3, type: 2}
+  - {fileID: 11400000, guid: b99bf61300312654986939bc1d43120e, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d1e27af88a4ea4b9311d7b412e6f60, type: 3}
+  m_Name: AState
+  m_EditorClassIdentifier: 
+  _storyText: 'A
+
+
+    1. AA
+
+    2. AB'
+  _nextStates:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: b99bf61300312654986939bc1d43120e, type: 2}
