@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 5080819ee96ad2c46aa3ddefb0f14fa8
+  productGUID: 52eaf74bebeb0ef4da201e8d6005a6e1
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Text101
+  productName: NumberWizard
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -545,17 +545,17 @@ PlayerSettings:
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 1
+  scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template2D
-  metroPackageVersion: 1.0.0.0
-  metroCertificatePath: C:\Dev\UnityDeveloper2DCourse\Text101\Text101\Assets\WSATestCertificate.pfx
+  metroPackageName: Template_2D
+  metroPackageVersion: 
+  metroCertificatePath: 
   metroCertificatePassword: 
-  metroCertificateSubject: DefaultCompany
-  metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 00b98d099273d501
+  metroCertificateSubject: 
+  metroCertificateIssuer: 
+  metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Template_2D
   wsaImages: {}
   metroTileShortName: 
@@ -569,45 +569,7 @@ PlayerSettings:
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  platformCapabilities:
-    WindowsStoreApps:
-      AllJoyn: False
-      Appointments: False
-      BackgroundMediaPlayback: False
-      BlockedChatMessages: False
-      Bluetooth: False
-      Chat: False
-      CodeGeneration: False
-      Contacts: False
-      EnterpriseAuthentication: False
-      HumanInterfaceDevice: False
-      InputInjectionBrokered: False
-      InternetClient: False
-      InternetClientServer: False
-      Location: False
-      LowLevelDevices: False
-      Microphone: False
-      MusicLibrary: False
-      Objects3D: False
-      OfflineMapsManagement: False
-      PhoneCall: False
-      PhoneCallHistoryPublic: False
-      PicturesLibrary: False
-      PointOfService: False
-      PrivateNetworkClientServer: False
-      Proximity: False
-      RecordedCallsFolder: False
-      RemoteSystem: False
-      RemovableStorage: False
-      SharedUserCertificates: False
-      SpatialPerception: False
-      SystemManagement: False
-      UserAccountInformation: False
-      UserDataTasks: False
-      UserNotificationListener: False
-      VideosLibrary: False
-      VoipCall: False
-      WebCam: False
+  platformCapabilities: {}
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
@@ -655,9 +617,9 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 3
-  cloudProjectId: 9d1d3555-1864-4202-aa01-efd4af7f0cf7
-  projectName: Text101 (1)
+  apiCompatibilityLevel: 2
+  cloudProjectId: fe617618-c1d6-4c50-ba9c-9564ae29886b
+  projectName: NumberWizard (1)
   organizationId: martin-zikmund
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
