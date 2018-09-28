@@ -6,16 +6,15 @@ public class Paddle : MonoBehaviour
 {
     [SerializeField] private float screenWidthInWorldUnits = 16;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    [SerializeField] private float minPosition = 1f;
+    [SerializeField] private float maxPosition = 15f;
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.mousePosition.x / Screen.width * screenWidthInWorldUnits);
-
+        var mousePositionInUnits = Input.mousePosition.x / Screen.width * screenWidthInWorldUnits;
+        var paddlePosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        paddlePosition.x = Mathf.Clamp(mousePositionInUnits, minPosition, maxPosition);
+        gameObject.transform.position = paddlePosition;
     }
 }
