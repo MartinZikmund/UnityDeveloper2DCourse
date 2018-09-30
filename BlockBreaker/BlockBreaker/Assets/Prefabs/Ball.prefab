@@ -193,7 +193,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d2e2b9fa1c8924f469aadc47590689a3, type: 3}
   - {fileID: 8300000, guid: 7d43e1ae6188e5d4c8c0ebb9ef268ee7, type: 3}
   - {fileID: 8300000, guid: 208c54634282d034a93f7bba3ec0f57d, type: 3}
-  - {fileID: 8300000, guid: 68f31329259322a4db0fcc5530dcabd7, type: 3}
+  randomFactor: 1
 --- !u!212 &212430899330082646
 SpriteRenderer:
   m_ObjectHideFlags: 1

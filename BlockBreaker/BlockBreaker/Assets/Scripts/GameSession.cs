@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class GameStatus : MonoBehaviour
+public class GameSession : MonoBehaviour
 {
 
     [SerializeField] [Range(0, 2)] private float gameSpeed = 1;
     [SerializeField] private int pointsPerBlockDestroyed = 83;
     [SerializeField] private Text scoreText;
-
+    [SerializeField] private bool autoPlay = false;
 
     [SerializeField] private int currentScore = 0;
 
-    public static GameStatus Instance { get; private set; }
+    public static GameSession Instance { get; private set; }
+
+    public bool AutoPlay => autoPlay;    
 
     private void Awake()
     {        
@@ -33,6 +35,11 @@ public class GameStatus : MonoBehaviour
     void Start()
     {
         UpdateScoreText();
+    }
+
+    public void ResetGame()
+    {
+        Destroy(gameObject);
     }
 
     private void UpdateScoreText()
