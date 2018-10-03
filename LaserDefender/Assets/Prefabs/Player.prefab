@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4054426599628692}
   - component: {fileID: 212285171217620946}
   - component: {fileID: 114037212027829374}
-  m_Layer: 0
+  - component: {fileID: 60011452283866584}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +42,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60011452283866584
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430122806536292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.99, y: 0.75}
+    newSize: {x: 0.99, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.49499997, y: 0.076560974}
+      - {x: 0.37879837, y: 0.001200676}
+      - {x: 0.12042607, y: 0.10190678}
+      - {x: 0.125, y: 0.235}
+      - {x: 0.0934805, y: 0.375}
+      - {x: -0.105, y: 0.375}
+      - {x: -0.145, y: 0.125}
+      - {x: -0.23732021, y: 0.05115986}
+      - {x: -0.35947412, y: -0.0029993057}
+      - {x: -0.49499997, y: 0.095}
+      - {x: -0.49499997, y: -0.24499999}
+      - {x: -0.39040032, y: -0.22964096}
+      - {x: -0.145, y: -0.295}
+      - {x: -0.095, y: -0.375}
+      - {x: 0.105, y: -0.375}
+      - {x: 0.14428176, y: -0.27808}
+      - {x: 0.4188914, y: -0.20891666}
+      - {x: 0.46192014, y: -0.25808048}
+      - {x: 0.4742401, y: -0.22040081}
 --- !u!114 &114037212027829374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,12 +96,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211fb832664bf374b878e4064b1199a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   moveSpeed: 10
   padding: 1
   laserPrefab: {fileID: 1035192534540042, guid: 5648c7aaf22b7c84ca6d477b26ad7d1a,
     type: 2}
   projectileSpeed: 20
   projectileFiringPeriod: 0.1
+  deathSFX: {fileID: 8300000, guid: 3b41cdfecda8f644d976a83f08446509, type: 3}
+  deathSoundVolume: 0.7
+  shootSFX: {fileID: 8300000, guid: 93d2b396811ab5540bbb068aa0dcbe5e, type: 3}
+  shootSoundVolume: 0.1
 --- !u!212 &212285171217620946
 SpriteRenderer:
   m_ObjectHideFlags: 1

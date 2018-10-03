@@ -10,6 +10,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float maxTimeBetweenShots = 3f;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectileSpeed = 10f;
+    [SerializeField] private GameObject explosionParticles;
+    [SerializeField] private float particleDestruction = 1f;
+    [SerializeField] private AudioClip deathSFX;
+    [SerializeField] [Range(0,1)] private float deathSoundVolume = 0.7f;
+    [SerializeField] private AudioClip shootSFX;
+    [SerializeField] [Range(0, 1)] private float shootSoundVolume = 0.5f;
 
     private void Start()
     {
@@ -34,21 +40,35 @@ public class Enemy : MonoBehaviour
     private void Fire()
     {
         var laser = Instantiate(projectile, transform.position, Quaternion.identity);
+        AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSoundVolume);
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         var damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        ProcessHit(damageDealer);
+        if (!damageDealer) return;
+        if (damageDealer != null)
+        {
+            ProcessHit(damageDealer);
+        }
     }
 
     private void ProcessHit(DamageDealer damageDealer)
     {
         health -= damageDealer.Damage;
+        damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation);
+        Destroy(explosion, particleDestruction);
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
     }
 }
