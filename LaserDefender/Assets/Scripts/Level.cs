@@ -13,6 +13,11 @@ public class Level : MonoBehaviour
 
     public void LoadGame()
     {
+        if (GameSession.Instance != null)
+        {
+            GameSession.Instance.ResetGame();
+        }
+
         SceneManager.LoadScene("InGame");
     }
 

@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
     private float yMin;
     private float yMax;
     private Coroutine _firingCoroutine;
-    
 
+    public float Health => health;
 
     // Use this for initialization
     void Start()

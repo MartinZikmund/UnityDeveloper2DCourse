@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875772696440986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2339566, y: -2.2968893, z: 0}
+  m_LocalPosition: {x: 0.15835807, y: -2.3979805, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,12 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae9bd513ff0d824d9c26d01e9a9872b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
-  projectile: {fileID: 1921597060425566, guid: d2765d26b84cb5f42abd8c1039d40437, type: 2}
-  projectileSpeed: 10
+  health: 1000
+  scoreValue: 460
+  minTimeBetweenShots: 1.5
+  maxTimeBetweenShots: 2.5
+  projectile: {fileID: 1921597060425566, guid: 020b466fc21429a44b20a1ea43644b23, type: 2}
+  projectileSpeed: 3
   explosionParticles: {fileID: 1282189440171512, guid: 6b7e1aff0277d9a4d99ae540c753c197,
     type: 2}
   particleDestruction: 1
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1d49fdaec831f4148adb2a58f380b015, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.91027117, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
