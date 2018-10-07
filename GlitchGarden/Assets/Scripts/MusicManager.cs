@@ -42,4 +42,9 @@ public class MusicManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
     }
+
+    public void SetVolume(float volume)
+    {
+        _audioSource.volume = volume;
+    }
 }

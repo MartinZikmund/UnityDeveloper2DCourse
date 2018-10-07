@@ -10,7 +10,10 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke("LoadNextLevel", _autoLoadNextLevelAfter);
+        if (_autoLoadNextLevelAfter != 0)
+        {
+            Invoke("LoadNextLevel", _autoLoadNextLevelAfter);
+        }
     }
 
 	public void LoadLevel( string name)
