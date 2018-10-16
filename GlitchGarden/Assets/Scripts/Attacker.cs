@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-    [Range(-1, 1.5f)]
-    public float _walkSpeed;
+    private float _currentSpeed;
+    private GameObject _currentTarget;
 
     // Use this for initialization
     void Start()
@@ -17,11 +17,26 @@ public class Attacker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * _walkSpeed * Time.deltaTime);
+        transform.Translate(Vector3.left * _currentSpeed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(name + " collided with " + other.gameObject.name);
-    }    
+    }
+
+    public void SetSpeed(float speed)
+    {
+        _currentSpeed = speed;
+    }
+
+    public void StrikeCurrentTarget(float damage)
+    {
+        Debug.Log(name + " done damage " + damage);
+    }
+
+    public void Attack(GameObject o)
+    {
+        _currentTarget = o;
+    }
 }
