@@ -5,6 +5,9 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     private float _currentSpeed;
+    [SerializeField]
+    [Tooltip("Average seconds")]
+    public float _seenEverySeconds;
     private GameObject _currentTarget;
 
     private Animator _animator;
@@ -31,7 +34,6 @@ public class Attacker : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(name + " collided with " + other.gameObject.name);
     }
 
     public void SetSpeed(float speed)
