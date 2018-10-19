@@ -9,33 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1308560559333010}
+  m_RootGameObject: {fileID: 1130908943274858}
   m_IsPrefabAsset: 1
---- !u!1 &1308560559333010
+--- !u!1 &1130908943274858
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4525927817808728}
+  - component: {fileID: 4479044919524932}
+  - component: {fileID: 114800663025251528}
   m_Layer: 0
-  m_Name: Projectiles
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4525927817808728
+--- !u!4 &4479044919524932
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1308560559333010}
+  m_GameObject: {fileID: 1130908943274858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 12, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114800663025251528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1130908943274858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d085ba237b4b9c4cb3a5c2c6abb7f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackerPrefabs:
+  - {fileID: 1901398048171676, guid: c95a2d7740168034189de16f47176683, type: 2}
+  - {fileID: 1670789461682452, guid: 3b2ddbf6bb1639344b33a5a41f5e9518, type: 2}

@@ -171,8 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectile: {fileID: 1462830361524476, guid: dd2427386e7beda47ae071f67e3c2ee6,
     type: 2}
-  _projectileParent: {fileID: 1308560559333010, guid: f784a9ff9c625db48b6bb2d42f76fde3,
-    type: 2}
+  _projectileParent: {fileID: 0}
   _gun: {fileID: 1183360944327256}
 --- !u!114 &114996002538191212
 MonoBehaviour:
