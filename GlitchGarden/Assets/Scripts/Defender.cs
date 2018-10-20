@@ -1,21 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Defender : MonoBehaviour {
+public class Defender : MonoBehaviour
+{
+    [SerializeField] public int StarCost = 10;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private StarDisplay _starDisplay;
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void Start()
     {
-        Debug.Log(name + " collided with " + other.gameObject.name);
+        _starDisplay = GameObject.FindObjectOfType<StarDisplay>();
+    }
+
+    public void AddStars(int amount)
+    {
+        _starDisplay.AddStars(amount);
     }
 }
