@@ -7,28 +7,40 @@ public class DefendersSpawner : MonoBehaviour
     private const string DefenderParentName = "Defenders";
     public Camera myCamera;
     private GameObject _defenderParent;
+    private StarDisplay _starDisplay;
 
     // Use this for initialization
-	void Start () {
-	    _defenderParent = GameObject.Find(DefenderParentName);
-	    if (!_defenderParent)
-	    {
-	        _defenderParent = new GameObject(DefenderParentName);
-	    }
+    void Start()
+    {
+        _defenderParent = GameObject.Find(DefenderParentName);
+        if (!_defenderParent)
+        {
+            _defenderParent = new GameObject(DefenderParentName);
+        }
+
+        _starDisplay = FindObjectOfType<StarDisplay>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnMouseDown()
     {
-        var gameObject = Instantiate(
-            TowerButton.SelectedDefender, 
-            SnapToGrid(CalculateWorldPointOfMouseClick()), 
-            Quaternion.identity);
-        gameObject.transform.parent = _defenderParent.transform;
+        if (TowerButton.SelectedDefender)
+        {
+            if (_starDisplay.UseStars(TowerButton.SelectedDefender.GetComponent<Defender>().StarCost) ==
+                StarDisplay.Status.Success)
+            {
+                var gameObject = Instantiate(
+                    TowerButton.SelectedDefender,
+                    SnapToGrid(CalculateWorldPointOfMouseClick()),
+                    Quaternion.identity);
+                gameObject.transform.parent = _defenderParent.transform;
+            }
+        }
     }
 
     Vector2 CalculateWorldPointOfMouseClick()
