@@ -14,6 +14,8 @@ public class MusicManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Debug.Log("Don't destroy me " + name);
         _audioSource = GetComponent<AudioSource>();
+        float volume = PlayerPrefsManager.MasterVolume;
+        SetVolume(volume);
     }
 
     private void Start()

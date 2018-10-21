@@ -33,8 +33,18 @@ public class GameTimer : MonoBehaviour
             Invoke("LoadNextLevel", _audioSource.clip.length);
             _isEndOfLevel = true;
             _winLabel.SetActive(true);
+            DestroyAllTaggedObjects();
         }
         _slider.value = Time.timeSinceLevelLoad / _levelSeconds;
+    }
+
+    private void DestroyAllTaggedObjects()
+    {
+        var objects = GameObject.FindGameObjectsWithTag("DestroyOnWin");
+        foreach (var obj in objects)
+        {
+            Destroy(obj);
+        }
     }
 
     void LoadNextLevel()
