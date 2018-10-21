@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 95690627857881764}
   m_Layer: 0
   m_Name: Corgette
-  m_TagString: Untagged
+  m_TagString: DestroyOnWin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _damage: 10
+  _damage: 40
 --- !u!212 &212538736961945714
 SpriteRenderer:
   m_ObjectHideFlags: 1

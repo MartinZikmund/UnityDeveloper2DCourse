@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114237087863392714}
   m_Layer: 0
   m_Name: Star Trophy
-  m_TagString: Untagged
+  m_TagString: DestroyOnWin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba377c3180966494e859e2a5b5d7f340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StarCost: 10
 --- !u!212 &212234999570883054
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 95481438264934686}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Untagged
+  m_TagString: DestroyOnWin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _damage: 20
+  _damage: 50
 --- !u!212 &212902558748912840
 SpriteRenderer:
   m_ObjectHideFlags: 1
