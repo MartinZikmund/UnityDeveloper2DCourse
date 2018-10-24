@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody _rigidBody;
     private AudioSource _audioSource;
-    [SerializeField] private float _launchSpeed;
+    [SerializeField] private Vector3 _launchSpeed;
     
 
     // Use this for initialization
@@ -14,8 +14,14 @@ public class Ball : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody>();
         _audioSource = GetComponent<AudioSource>();
+        _rigidBody.useGravity = false;
+        Launch(_launchSpeed);
+    }
 
-        _rigidBody.velocity = new Vector3(0, 0, _launchSpeed);
+    private void Launch( Vector3 velocity )
+    {
+        _rigidBody.useGravity = true;
+        _rigidBody.velocity = velocity;
         _audioSource.Play();
     }
 
