@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody _rigidBody;
     private AudioSource _audioSource;
+   
     [SerializeField] private Vector3 _launchSpeed;
     
 
@@ -14,15 +15,15 @@ public class Ball : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody>();
         _audioSource = GetComponent<AudioSource>();
-        _rigidBody.useGravity = false;
-        Launch(_launchSpeed);
+        _rigidBody.useGravity = false;        
     }
 
-    private void Launch( Vector3 velocity )
+    public void Launch( Vector3 velocity )
     {
         _rigidBody.useGravity = true;
         _rigidBody.velocity = velocity;
         _audioSource.Play();
+        InPlay = true;
     }
 
     // Update is called once per frame
@@ -30,4 +31,6 @@ public class Ball : MonoBehaviour
     {
 
     }
+
+    public bool InPlay { get; set; }
 }
