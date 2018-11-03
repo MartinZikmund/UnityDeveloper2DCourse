@@ -17,7 +17,7 @@ public class CameraControl : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (transform.position.z < 1829) //in front of head pin
+	    if (_ball.transform.position.z < 17.29) //in front of head pin
 	    {
 	        transform.position = _ball.transform.position + _offset;
         }	    
