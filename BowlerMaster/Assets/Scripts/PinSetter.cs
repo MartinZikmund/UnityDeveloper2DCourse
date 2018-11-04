@@ -31,6 +31,31 @@ public class PinSetter : MonoBehaviour
         }
     }
 
+    public void RaisePins()
+    {
+        var pins = FindObjectsOfType<Pin>();
+        foreach (var pin in pins)
+        {
+            pin.Raise();
+        }
+    }
+
+
+
+    public void RenewPins()
+    {
+
+    }
+
+    public void LowerPins()
+    {
+        var pins = FindObjectsOfType<Pin>();
+        foreach (var pin in pins)
+        {
+            pin.Lower();
+        }
+    }
+
 
     void CheckStanding(int countStanding)
     {
