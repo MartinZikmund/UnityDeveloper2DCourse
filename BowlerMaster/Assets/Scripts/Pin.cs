@@ -25,7 +25,7 @@ public class Pin : MonoBehaviour
     {
         if (IsStanding())
         {
-            _rigidBody.useGravity = false;
+            (_rigidBody ?? GetComponent<Rigidbody>()).useGravity = false;
             transform.Translate(new Vector3(0, _raiseDistance, 0), Space.World);
         }
     }

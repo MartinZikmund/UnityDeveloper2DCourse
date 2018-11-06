@@ -14,6 +14,10 @@ public class PinSetter : MonoBehaviour
     private bool _ballEnteredBox = false;
     private Ball _ball;
 
+    [SerializeField] private GameObject _root;
+
+    [SerializeField] private GameObject _pinSet;
+
     // Use this for initialization
     void Start()
     {
@@ -44,7 +48,14 @@ public class PinSetter : MonoBehaviour
 
     public void RenewPins()
     {
-
+        var pinSet = Instantiate(_pinSet, new Vector3(0, 0, 18.29f), Quaternion.identity);
+        
+        pinSet.transform.parent = _root.transform;
+        pinSet.transform.localScale = Vector3.one;        
+        foreach (Pin child in pinSet.GetComponentsInChildren<Pin>())
+        {
+            child.Raise();
+        }
     }
 
     public void LowerPins()
