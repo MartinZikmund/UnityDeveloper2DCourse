@@ -58,6 +58,19 @@ public class ActionMasterTest
     }
 
     [Test]
+    public void Turkey()
+    {
+        int[] rolls = Enumerable.Repeat(1, 18).ToArray();
+        foreach (var roll in rolls)
+        {
+            _actionMaster.Bowl(roll);
+        }
+        Assert.AreEqual(ActionMaster.Action.Reset, _actionMaster.Bowl(10));
+        Assert.AreEqual(ActionMaster.Action.Reset, _actionMaster.Bowl(10));
+        Assert.AreEqual(ActionMaster.Action.EndGame, _actionMaster.Bowl(10));
+    }
+
+    [Test]
     public void YouTubeRollsEndInEndGame()
     {
         int[] rolls = { 8, 2, 7, 3, 3, 4, 10, 2, 8, 10, 10, 8, 0, 10, 8, 2 };
@@ -103,5 +116,16 @@ public class ActionMasterTest
 
         _actionMaster.Bowl(10);
         Assert.AreEqual(ActionMaster.Action.Tidy, _actionMaster.Bowl(0));
+    }
+
+    [Test]
+    public void NathanBowlTest()
+    {
+        int[] rolls = {0, 10, 5};
+        foreach (var roll in rolls)
+        {
+            _actionMaster.Bowl(roll);
+        }
+        Assert.AreEqual(ActionMaster.Action.EndTurn, _actionMaster.Bowl(1));
     }
 }

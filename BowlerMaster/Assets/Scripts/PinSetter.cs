@@ -11,8 +11,11 @@ public class PinSetter : MonoBehaviour
 
     public Text standingDisplay;
 
-    private bool _ballEnteredBox = false;
+    public bool _ballEnteredBox = false;
     private Ball _ball;
+    private int _lastSettledCount = 10;
+    private ActionMaster _actionMaster = new ActionMaster();
+    private Animator _animator = null;
 
     [SerializeField] private GameObject _root;
 
@@ -22,6 +25,7 @@ public class PinSetter : MonoBehaviour
     void Start()
     {
         _ball = GameObject.FindObjectOfType<Ball>();
+        _animator = GameObject.FindObjectOfType<Animator>();
     }
 
     // Update is called once per frame
@@ -43,8 +47,6 @@ public class PinSetter : MonoBehaviour
             pin.Raise();
         }
     }
-
-
 
     public void RenewPins()
     {
@@ -85,26 +87,43 @@ public class PinSetter : MonoBehaviour
 
     void PinsHaveSettled()
     {
+        HandlePinFall();
+
         _ball.Reset();
         _ballEnteredBox = false;
         _lastStandingCount = -1;
+        _lastSettledCount = 10;
         standingDisplay.color = Color.green;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void HandlePinFall()
     {
-        if (other.gameObject.GetComponent<Ball>())
+        int pinFall = _lastSettledCount - CountStanding();
+        _lastStandingCount = CountStanding();
+        var action = _actionMaster.Bowl(pinFall);
+        switch (action)
         {
-            _ballEnteredBox = true;
-            standingDisplay.color = Color.red;
+            case ActionMaster.Action.Tidy:
+                _animator.SetTrigger("tidyTrigger");
+                break;
+            case ActionMaster.Action.Reset:
+                _animator.SetTrigger("resetTrigger");
+                break;
+            case ActionMaster.Action.EndTurn:
+                _animator.SetTrigger("resetTrigger");
+                break;
+            case ActionMaster.Action.EndGame:
+                _animator.SetTrigger("resetTrigger");
+                break;
         }
     }
+
+
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.GetComponent<Pin>())
         {
-            _ballEnteredBox = true;
             Destroy(other.gameObject);
         }
     }

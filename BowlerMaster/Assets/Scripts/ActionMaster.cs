@@ -26,7 +26,7 @@ public class ActionMaster
 
         if (_bowlId == 21) return Action.EndGame;
 
-        if (_bowlId == 19 && pins == 10)
+        if (_bowlId >= 19 && pins == 10)
         {
             _bowlId++;
             return Action.Reset;
@@ -52,19 +52,24 @@ public class ActionMaster
             }
         }
 
-        if (pins == 10)
-        {
-            _bowlId += 2;
-            return Action.EndTurn;
-        }
 
-        _bowlId++;
-        if (_bowlId % 2 == 0)
+        
+        if (_bowlId % 2 != 0)
         {
-            return Action.Tidy;
+            if (pins == 10)
+            {
+                _bowlId += 2;
+                return Action.EndTurn;
+            }
+            else
+            {
+                _bowlId += 1;
+                return Action.Tidy;
+            }
         }
         else
         {
+            _bowlId += 1;
             return Action.EndTurn;
         }
 
