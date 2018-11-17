@@ -11,11 +11,5 @@ public class LaneBox : MonoBehaviour {
 	    _pinSetter = FindObjectOfType<PinSetter>();
 	}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.GetComponent<Ball>())
-        {
-            _pinSetter._ballEnteredBox = true;
-        }
-    }
+
 }
