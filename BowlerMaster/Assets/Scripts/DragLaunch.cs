@@ -29,19 +29,25 @@ public class DragLaunch : MonoBehaviour
 
     public void DragStart()
     {
-        _startPosition = Input.mousePosition;
-        _startTime = Time.time;
+        if (!_ball.InPlay)
+        {
+            _startPosition = Input.mousePosition;
+            _startTime = Time.time;
+        }
     }
 
     public void DragEnd()
     {
-        _endPosition = Input.mousePosition;
-        _endTime = Time.time;
+        if (!_ball.InPlay)
+        {
+            _endPosition = Input.mousePosition;
+            _endTime = Time.time;
 
-        float dragDuration = _endTime - _startTime;
-        float launchSpeedX = (_endPosition.x - _startPosition.x) / dragDuration;
-        float launchSpeedZ = (_endPosition.y - _startPosition.y) / dragDuration;
-        var launchVelocity = new Vector3(launchSpeedX / 300, 0, launchSpeedZ / 100);
-        _ball.Launch(launchVelocity);
+            float dragDuration = _endTime - _startTime;
+            float launchSpeedX = (_endPosition.x - _startPosition.x) / dragDuration;
+            float launchSpeedZ = (_endPosition.y - _startPosition.y) / dragDuration;
+            var launchVelocity = new Vector3(launchSpeedX / 300, 0, launchSpeedZ / 100);
+            _ball.Launch(launchVelocity);
+        }
     }
 }

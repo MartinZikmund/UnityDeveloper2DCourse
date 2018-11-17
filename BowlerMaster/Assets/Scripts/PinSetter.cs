@@ -45,15 +45,16 @@ public class PinSetter : MonoBehaviour
         foreach (var pin in pins)
         {
             pin.Raise();
+            pin.transform.rotation = Quaternion.Euler(270, 0, 0);
         }
     }
 
     public void RenewPins()
     {
         var pinSet = Instantiate(_pinSet, new Vector3(0, 0, 18.29f), Quaternion.identity);
-        
+
         pinSet.transform.parent = _root.transform;
-        pinSet.transform.localScale = Vector3.one;        
+        pinSet.transform.localScale = Vector3.one;
         foreach (Pin child in pinSet.GetComponentsInChildren<Pin>())
         {
             child.Raise();

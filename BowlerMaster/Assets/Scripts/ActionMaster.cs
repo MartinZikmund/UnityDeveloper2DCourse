@@ -15,8 +15,19 @@ public class ActionMaster
         EndGame
     }
 
-    private int[] _bowls = new int[21];
+    private readonly int[] _bowls = new int[21];
     private int _bowlId = 1;
+
+    public static Action NextAction(List<int> pinFalls)
+    {
+        var am = new ActionMaster();
+        var currentAction = new Action();
+        foreach (var pinFall in pinFalls)
+        {
+            currentAction = am.Bowl(pinFall);
+        }
+        return currentAction;
+    }
 
     public Action Bowl(int pins)
     {
