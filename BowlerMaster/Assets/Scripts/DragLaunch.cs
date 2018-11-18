@@ -23,7 +23,10 @@ public class DragLaunch : MonoBehaviour
     {
         if (!_ball.InPlay)
         {
-            _ball.transform.Translate(new Vector3(distance, 0, 0));
+            var xPos = Mathf.Clamp(_ball.transform.position.x + distance, -0.5f, 0.5f);
+            var yPos = _ball.transform.position.y;
+            var zPos = _ball.transform.position.z;
+            _ball.transform.position = new Vector3(xPos, yPos, zPos);
         }
     }
 

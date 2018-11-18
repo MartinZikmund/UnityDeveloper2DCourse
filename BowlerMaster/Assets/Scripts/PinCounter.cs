@@ -32,7 +32,7 @@ public class PinCounter : MonoBehaviour
 
     public void Reset()
     {
-        _lastStandingCount = 10;
+        _lastSettledCount = 10;
     }
 
     void CheckStanding(int countStanding)
@@ -60,12 +60,11 @@ public class PinCounter : MonoBehaviour
 
     void PinsHaveSettled()
     {
-        int pinFall = _lastSettledCount - CountStanding();
+        int pinFall = _lastStandingCount - CountStanding();
         _lastStandingCount = CountStanding();
         _gameManager.Bowl(pinFall);
 
         _ballOutOfPlay = false;
-        _lastStandingCount = -1;
         _lastSettledCount = 10;
         standingDisplay.color = Color.green;
     }
